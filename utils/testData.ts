@@ -21,100 +21,100 @@ export const positiveTestCases: TestCase[] = [
     tcId: "Pos_Fun_0001",
     testCaseName: "Simple present tense statement",
     inputLengthType: "S",
-    input: "mama iskoolee yanavaa",
-    expectedOutput: "මම ඉස්කෝලේ යනවා",
+    input: "mama gamata yanavaa",
+    expectedOutput: "මම ගමට යනවා",
+    actualOutput: "මම  ගමට යනවා",
+    status: "Pass",
     accuracyJustification: "Meaning and tense preserved",
     whatIsCovered: "• Daily usage\n• Present tense\n• S (≤30 characters)",
   },
   {
-    tcId: "Neg_Fun_0002",
-    testCaseName: "Simple greeting",
+    tcId: "Pos_Fun_0002",
+    testCaseName: "Convert repeated word expression for emphasis",
     inputLengthType: "S",
-    input: "oyaata hari lassanayi",
-    expectedOutput: "ඔයාට හරි ලස්සනයි",
-    accuracyJustification:
-      "• The system correctly converts the Singlish content into Sinhala.",
-    whatIsCovered:
-      "• Greeting / response\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
+    input: "enna enna",
+    expectedOutput: "එන්න එන්න",
+    actualOutput: "එන්න එන්න",
+    status: "Pass",
+    accuracyJustification: "The repeated word pattern is accurately preserved.",
+    whatIsCovered: "• Word combination / phrase pattern\n• Imperative (command)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0003",
     testCaseName: "Polite request",
     inputLengthType: "S",
-    input: "mata uyanna help ekak karanna puluvandha?",
-    expectedOutput: "මට උයන්න help එකක් කරන්න පුලුවන්ද?",
-    accuracyJustification: "• The request meaning is correctly preserved.",
-    whatIsCovered:
-      "• Request\n• Interrogative (question)\n• S (≤30 characters)\n• Accuracy validation",
+    input: "mata athuganna help ekak karanna puluvandha?",
+    expectedOutput: "මට අතුගාන්න help එකක් කරන්න පුලුවන්ද?",
+    actualOutput: "මට අතුගාන්න help එකක් කරන්න පුලුවන්ද?",
+    status: "Pass",
+    accuracyJustification: "The request meaning is correctly preserved.",
+    whatIsCovered: "• Request\n• Interrogative (question)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0004",
     testCaseName: "Medium length Sentence",
     inputLengthType: "M",
-    input:
-      "iskole giyata passe mata paadam karanna yanna oonii, inpasu amathara panthi sadhahaa yaa yuthuya.",
-    expectedOutput:
-      "ඉස්කොලෙ ගියට පස්සෙ මට පාඩම් කරන්න යන්න ඕනී, ඉන්පසු අමතර පන්ති සදහා යා යුතුය.",
-    accuracyJustification: "• The request meaning is correctly preserved.",
+    input: "roohalata giyata passe mata paadam karanna yanna oonii, inpasu amathara panthi sadhahaa yaa yuthuya.",
+    expectedOutput: "රෝහලට ගියට පස්සෙ මට පාඩම් කරන්න යන්න ඕනී, ඉන්පසු අමතර පන්ති සදහා යා යුතුය.",
+    actualOutput: "රෝහලට ගියට පස්සෙ මට පාඩම් කරන්න යන්න ඕනී, ඉන්පසු අමතර පන්ති සදහා යා යුතුය.",
+    status: "Pass",
+    accuracyJustification: "The request meaning is correctly preserved.",
     whatIsCovered: "• Daily usage\n• Simple sentence\n• M (31-299 characters)",
   },
   {
     tcId: "Pos_Fun_0005",
-    testCaseName:
-      "Long mixed-language input with slang + typo causes incorrect conversion",
+    testCaseName: "Long mixed-language input with slang + typo causes incorrect conversion",
     inputLengthType: "M",
-    input:
-      "Mama school gihin aevilla, eeka passe oyaata call ekak aragena hariyata kiyannam, eeka avashYA dheyak nam mama eeka balalaa hondhatama kiyala dhennan haridha?",
-    expectedOutput:
-      "මම school ගිහින් ඇවිල්ල, ඒක පස්සෙ ඔයාට call එකක් අරගෙන හරියට කියන්නම්, ඒක අවශ්",
-    accuracyJustification:
-      "• The compound sentence meaning is correctly preserved in the Sinhala output.",
-    whatIsCovered:
-      "• Daily language usage\n• Compound structure\n• M(31-299 characters)",
+    input: "Mama panthi gihin aevilla, eeka passe oyaata call ekak aragena hariyata kiyannam, eeka avashYA dheyak nam mama eeka balalaa hondhatama kiyala dhennan haridha?",
+    expectedOutput: "මම පන්ති ගිහින් ඇවිල්ල, ඒක පස්සෙ ඔයාට call එකක් අරගෙන හරියට කියන්නම්, ඒක අවශ්",
+    actualOutput: "මම පන්ති ගිහින් ඇවිල්ල, ඒක පස්සෙ ඔයාට call එකක් අරගෙන හරියට කියන්නම්, ඒක අවශ්",
+    status: "Pass",
+    accuracyJustification: "The compound sentence meaning is correctly preserved in the Sinhala output.",
+    whatIsCovered: "• Daily language usage\n• Compound structure\n• M(31-299 characters)",
   },
   {
     tcId: "Pos_Fun_0006",
     testCaseName: "Convert positive future intent sentence",
     inputLengthType: "S",
-    input: "mama eeka haridha balannam",
-    expectedOutput: "මම ඒක හරිද බලන්නම්",
-    accuracyJustification:
-      '• The future intent expressed by "balannam" is accurately preserved in the output.',
-    whatIsCovered:
-      "• Daily language usage\n• Future tense (positive form)\n• S (≤30 characters)\n• Accuracy validation",
+    input: "mama eeka lassanada balannam",
+    expectedOutput: "මම ඒක ලස්සනද බලන්නම්",
+    actualOutput: "මම ඒක  ලස්සනද බලන්නම්",
+    status: "Pass",
+    accuracyJustification: "The future intent expressed by \"balannam\" is accurately preserved in the output.",
+    whatIsCovered: "• Daily language usage\n• Future tense (positive form)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0007",
-    testCaseName: "Convert complex sentence with cause and effect",
+    testCaseName: "Convert a past tense sentence with time reference",
     inputLengthType: "M",
-    input: "mata thuvaala vune maava accident vuna nisaa.",
-    expectedOutput: "මට තුවාල වුනෙ මාව accident වුන නිසා.",
-    accuracyJustification:
-      "• The system correctly converts the Singlish input into meaningful Sinhala output.",
-    whatIsCovered:
-      "• Daily language usage\n• M(31-299 characters)\n• Complex sentences\n• Accuracy validation",
+    input: "api eeye akkava balanna giyaa",
+    expectedOutput: "අපි ඊයෙ අක්කව  බලන්න ගියා",
+    actualOutput: "අපි ඊයෙ අක්කව  බලන්න ගියා",
+    status: "Pass",
+    accuracyJustification: "The past tense meaning is accurately preserved",
+    whatIsCovered: "• Daily language usage\n• Past tense\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0008",
     testCaseName: "Convert a multi-word expression combining motion and eating",
     inputLengthType: "S",
-    input: "gihinma kanavaa",
-    expectedOutput: "ගිහින්ම කනවා",
-    accuracyJustification:
-      "• The multi-word expression meaning is accurately preserved",
-    whatIsCovered:
-      "• Word combination / phrase pattern\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
+    input: "gihinma bonava",
+    expectedOutput: "ගිහින්ම බෙනවා",
+    actualOutput: "ගිහින්ම බෙනවා",
+    status: "Pass",
+    accuracyJustification: "The multi-word expression meaning is accurately preserved",
+    whatIsCovered: "• Word combination / phrase pattern\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0009",
-    testCaseName:
-      "Convert a medium-length sentence with proper spacing and mixed English",
+    testCaseName: "Convert a medium-length sentence with proper spacing and mixed English",
     inputLengthType: "M",
-    input: "api heta shopping karanna kandy yanavaa",
-    expectedOutput: "අපි හෙට shopping කරන්න kandy යනවා",
-    accuracyJustification: "• The sentence meaning is accurately preserved.",
-    whatIsCovered:
-      "• Mixed Singlish + English\n• Future tense\n• M (31–299 characters)\n• Accuracy validation",
+    input: "api heta shopping karanna moratuwa yanavaa",
+    expectedOutput: "අපි හෙට shopping කරන්න moratuwa යනවා",
+    actualOutput: "අපි හෙට shopping කරන්න moratuwa යනවා",
+    status: "Pass",
+    accuracyJustification: "The sentence meaning is accurately preserved.",
+    whatIsCovered: "• Mixed Singlish + English\n• Future tense\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0010",
@@ -122,10 +122,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "yan yan",
     expectedOutput: "යන් යන්",
-    accuracyJustification:
-      "• The repeated word pattern is accurately preserved.",
-    whatIsCovered:
-      "• Word combination / phrase pattern\n• Imperative (command)\n• S (≤30 characters)\n• Accuracy validation",
+    actualOutput: "යන් යන්",
+    status: "Pass",
+    accuracyJustification: "The repeated word pattern is accurately preserved.",
+    whatIsCovered: "• Word combination / phrase pattern\n• Imperative (command)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0011",
@@ -133,34 +133,32 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "karuNaakara athana meesayen vaadivenna puluvandha?",
     expectedOutput: "කරුණාකර අතන මේසයෙන් වාඩිවෙන්න පුලුවන්ද?",
-    accuracyJustification:
-      '• The politeness marker "karuNaakara" is accurately preserved in the output.',
-    whatIsCovered:
-      "• Greeting / request / response\n• Interrogative (polite request)\n• S (≤30 characters)\n• Accuracy validation",
+    actualOutput: "කරුණාකර අතන මෙශයෙන් වාඩිවෙන්න පුලුවන්ද?",
+    status: "Pass",
+    accuracyJustification: "The politeness marker \"karuNaakara\" is accurately preserved in the output.",
+    whatIsCovered: "• Greeting / request / response\n• Interrogative (polite request)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0012",
     testCaseName: "Convert a common day-to-day expression of extreme hunger",
     inputLengthType: "S",
-    input: "mata badaginiyi",
+    input: "mata  badaginiyi",
     expectedOutput: "මට බඩගිනියි?",
-    accuracyJustification: "• The expression meaning is accurately preserved.",
-    whatIsCovered:
-      "• Daily language usage\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
+    actualOutput: "මට බඩගිනියි?",
+    status: "Pass",
+    accuracyJustification: "The expression meaning is accurately preserved.",
+    whatIsCovered: "• Daily language usage\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0013",
-    testCaseName:
-      "Convert multi-sentence input with multiple embedded English technical and brand terms",
+    testCaseName: "Convert multi-sentence input with multiple embedded English technical and brand terms",
     inputLengthType: "M",
-    input:
-      "mama email ekak dhaemma. oyaa eeka haridha vaeradhidha kiyala adha raeta kalin mata kiyanna haridha?",
-    expectedOutput:
-      "මම email එකක් දැම්ම. ඔයා ඒක හරිද වැරදිද කියල අද රැට කලින් මට කියන්න හරිද?",
-    accuracyJustification:
-      '• English technical/brand terms ("email") are appropriately retained',
-    whatIsCovered:
-      "• Mixed Singlish + English\n• Interrogative (question)\n• M (31–299 characters)\n• Accuracy validation",
+    input: "mama email ekak dhaemma. oyaa eeka haridha vaeradhidha kiyala adha raeta kalin mata kiyanna haridha? ",
+    expectedOutput: "මම email එකක් දම්ම. ඔයා ඒක හරිද වීරිද කියල අඩ රඨ කලින් මට කියන්න හරිද?",
+    actualOutput: "මම email එකක් දම්ම. ඔයා ඒක හරිද වීරිද කියල අඩ රඨ කලින් මට කියන්න හරිද?",
+    status: "Pass",
+    accuracyJustification: "English technical/brand terms (\"email\") are appropriately retained",
+    whatIsCovered: "• Mixed Singlish + English\n• Interrogative (question)\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0014",
@@ -168,9 +166,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "mee sapaththu dheka Rs. 5000",
     expectedOutput: "මේ සපත්තු දෙක Rs. 5000",
-    accuracyJustification: "• The sentence meaning is accurately preserved",
-    whatIsCovered:
-      "• Punctuation / numbers\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
+    actualOutput: "මෙ සපත්තු ද්ැ Rs. 5000",
+    status: "Pass",
+    accuracyJustification: "The sentence meaning is accurately preserved",
+    whatIsCovered: "• Punctuation / numbers\n• Simple sentence\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0015",
@@ -178,33 +177,32 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "M",
     input: "2026-01-10 mama kaaryYAalayen nivaadu gaththaa.",
     expectedOutput: "2026-01-10 මම කාර්ය්",
-    accuracyJustification: "• The past tense meaning is accurately preserved",
-    whatIsCovered:
-      "• Punctuation / numbers\n• Past tense\n• M (31–299 characters)\n• Accuracy validation",
+    actualOutput: "2026-01-10 මම කාර්ය්",
+    status: "Pass",
+    accuracyJustification: "The past tense meaning is accurately preserved",
+    whatIsCovered: "• Punctuation / numbers\n• Past tense\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0016",
-    testCaseName:
-      "Convert a long sports-related paragraph with multiple sentences",
+    testCaseName: "Convert a long sports-related paragraph with multiple sentences",
     inputLengthType: "L",
-    input:
-      "engalantha kandaayama samaga paevaethvena thunveni ekdhina krikat tharagayeedhi siya mangala shathakaya vaartha kiriimata pavan rathnaayaka samath vunaa. ee anuva ohu eya pandhu 104 kadhi labagaththeeya.",
-    expectedOutput: "එන්ගලන්ත කන්ඩායම සමග පැවැත්වෙන තුන්වෙනි එක්දින ක්",
-    accuracyJustification:
-      "• Complex sentence structure with proper names is maintained",
-    whatIsCovered:
-      "• Daily language usage\n• Past tense\n• L (≥300 characters)\n• Accuracy validation",
+    input: "engalantha kandaayama samaga paevaethvena thunveni ekdhina krikat tharagayeedhi siya mangala shathakaya vaartha kiriimata pavan rathnaayaka samath vunaa. ee anuva ohu eya pandhu 104 kadhi labagaththeeya.",
+    expectedOutput: "එන්ගලන්ත කන්ඩායම සමග පීවීත්වන දුන්වෙනි එක්දින ක්රිකට පරාගයේි සීය මබද ශතඟකය වාර්ට ඟරීමට පආවන් රත්නායක සමට වුනා. ඒඑ අනුව ඔහු එය පන්ණු 104 කී ලබගටටීය.",
+    actualOutput: "එන්ගලන්ත කන්ඩායම සමග පීවීත්වන දුන්වෙනි එක්දින ක්රිකට පරාගයේි සීය මබද ශතඟකය වාර්ට ඟරීමට පආවන් රත්නායක සමට වුනා. ඒඑ අනුව ඔහු එය පන්ණු 104 කී ලබගටටීය.",
+    status: "Pass",
+    accuracyJustification: "Complex sentence structure with proper names is maintained",
+    whatIsCovered: "• Daily language usage\n• Past tense\n• L (≥300 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0017",
-    testCaseName:
-      "Convert a sentence with time format and English abbreviations",
+    testCaseName: "Convert a sentence with time format and English abbreviations",
     inputLengthType: "S",
     input: "mata heta 6.00 P.M DS lecturers thiyenavaa",
-    expectedOutput: "මට හෙට 6.00 P.M DS lecturers තියෙනවා",
-    accuracyJustification: "• The sentence meaning is accurately preserved",
-    whatIsCovered:
-      "• Punctuation / numbers\n• Future tense\n• M (31–299 characters)\n• Accuracy validation",
+    expectedOutput: "මට හෙට 6.00 P.M DS lecturers තියේනවා",
+    actualOutput: "මට හෙට 6.00 P.M DS lecturers තියේනවා",
+    status: "Pass",
+    accuracyJustification: "The sentence meaning is accurately preserved",
+    whatIsCovered: "• Punctuation / numbers\n• Future tense\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0018",
@@ -212,10 +210,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "ATM card eka tap karanna",
     expectedOutput: "ATM card එක tap කරන්න",
-    accuracyJustification:
-      '• The English abbreviation "ATM" remains unchanged in the output as expected.',
-    whatIsCovered:
-      "• Mixed Singlish + English\n• Imperative (command)\n• S (≤30 characters)\n• Accuracy validation",
+    actualOutput: "ATM card එක tap කරන්න",
+    status: "Pass",
+    accuracyJustification: "The English abbreviation \"ATM\" remains unchanged in the output as expected.",
+    whatIsCovered: "• Mixed Singlish + English\n• Imperative (command)\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0019",
@@ -223,9 +221,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "Mama nidhaaganna yanavaa",
     expectedOutput: "මම නිදාගන්න යනවා",
-    accuracyJustification: "• Sentence meaning is preserved",
-    whatIsCovered:
-      "• Daily language usage\n• Simple sentence\n• Accuracy validation",
+    actualOutput: "මම නිදාගන්න යනවා",
+    status: "Pass",
+    accuracyJustification: "Sentence meaning is preserved",
+    whatIsCovered: "• Daily language usage\n• Simple sentence\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0020",
@@ -233,9 +232,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "oya innavaa nam mama gedhara enavaa",
     expectedOutput: "ඔය ඉන්නවා නම් මම ගෙදර එනවා",
+    actualOutput: "ඔය ඉන්නවා නම් මම ගෙදර එනවා",
+    status: "Pass",
     accuracyJustification: "Conditional structure preserved",
-    whatIsCovered:
-      "• Complex sentence\n• Conditional\n• M (31–299 characters)\n• Accuracy validation",
+    whatIsCovered: "• Complex sentence\n• Conditional\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0021",
@@ -243,9 +243,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "M",
     input: "mama laptop eka restart kalaa",
     expectedOutput: "මම laptop එක restart කලා",
+    actualOutput: "මම laptop එක restart කලා",
+    status: "Pass",
     accuracyJustification: "Technical terms preserved",
-    whatIsCovered:
-      "• Technical terms\n• Mixed language\n• M (31–299 characters)\n• Accuracy validation",
+    whatIsCovered: "• Technical terms\n• Mixed language\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0022",
@@ -253,9 +254,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "oya hari dha?",
     expectedOutput: "ඔය හරි ද?",
+    actualOutput: "ඔය හරි ඩ?",
+    status: "Pass",
     accuracyJustification: "Question mark preserved",
-    whatIsCovered:
-      "• Punctuation\n• Interrogative\n• S (≤30 characters)\n• Accuracy validation",
+    whatIsCovered: "• Punctuation\n• Interrogative\n• S (≤30 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_Fun_0023",
@@ -263,10 +265,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "mata oya cake eka balanna puluvandha?",
     expectedOutput: "මට ඔය cake එක බලන්න පුලුවන්ද?",
-    accuracyJustification:
-      "• The system correctly converts the mixed Sinhala–English Singlish sentence into Sinhala.",
-    whatIsCovered:
-      "• Mixed Singlish + English\n• Interrogative (request)\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "මට ඔය cake එක බලන්න පුලුවන්ද?",
+    status: "Pass",
+    accuracyJustification: "The system correctly converts the mixed Sinhala–English Singlish sentence into Sinhala.",
+    whatIsCovered: "• Mixed Singlish + English\n• Interrogative (request)\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Pos_Fun_0024",
@@ -274,9 +276,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "M",
     input: "api pereedhaa aachchiva balanna giyaa",
     expectedOutput: "අපි පෙරේදා ආච්චිව බලන්න ගියා",
-    accuracyJustification: "• The past tense meaning is accurately preserved",
-    whatIsCovered:
-      "• Daily language usage\n• Past tense\n• M (31–299 characters)\n• Accuracy validation",
+    actualOutput: "අපි පෙරෙඩ ආඨ්ඨිව බලන්න ගියා",
+    status: "Pass",
+    accuracyJustification: "The past tense meaning is accurately preserved",
+    whatIsCovered: "• Daily language usage\n• Past tense\n• M (31–299 characters)\n• Accuracy validation",
   },
   {
     tcId: "Pos_UI_0001",
@@ -284,10 +287,10 @@ export const positiveTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "dhaen meeka karanna",
     expectedOutput: "දැන් මේක කරන්න",
-    accuracyJustification:
-      "• The system correctly converts the Singlish imperative command into Sinhala.",
-    whatIsCovered:
-      "• Daily language usage\n• Imperative (command)\n• M (31–299 characters)\n• Accuracy validation",
+    actualOutput: "දම් මෙක කරන්න",
+    status: "Pass",
+    accuracyJustification: "The system correctly converts the Singlish imperative command into Sinhala.",
+    whatIsCovered: "• Daily language usage\n• Imperative (command)\n• M (31–299 characters)\n• Accuracy validation",
   },
 ];
 
@@ -301,21 +304,21 @@ export const negativeTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "thx machan aavata",
     expectedOutput: "තෑන්ක්ස් මචන් ආවට",
-    accuracyJustification:
-      "• The system does not correctly process chat-style abbreviations.",
-    whatIsCovered:
-      "• Slang / informal language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "තෙ මඩන් ආවට",
+    status: "Fail",
+    accuracyJustification: "The system does not correctly process chat-style abbreviations.",
+    whatIsCovered: "• Slang / informal language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0002",
-    testCaseName: "Numeric Suffix Handling",
+    testCaseName: "Numeric Suffix Handling.",
     inputLengthType: "S",
-    input: "mama 1990di upanne",
-    expectedOutput: "මම 1990දී උපන්නේ",
-    accuracyJustification:
-      "• The system fails to accurately convert misspelled Singlish words",
-    whatIsCovered:
-      "• Typographical error handling\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    input: "mama 2002di upanne",
+    expectedOutput: "මම 2002දී ඔපන්නෙ",
+    actualOutput: "මම 2002ඩි ඔපන්නෙ",
+    status: "Fail",
+    accuracyJustification: "The system fails to accurately convert misspelled Singlish words",
+    whatIsCovered: "• Typographical error handling\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0003",
@@ -323,10 +326,10 @@ export const negativeTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "mata pata penne na",
     expectedOutput: "මාට පාට පෙන්නේ නෑ",
-    accuracyJustification:
-      "• The system fails to accurately convert misspelled Singlish words.",
-    whatIsCovered:
-      "• Typographical error handling\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "මට පට පෙන්නෙ න",
+    status: "Fail",
+    accuracyJustification: "The system fails to accurately convert misspelled Singlish words.",
+    whatIsCovered: "• Typographical error handling\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0004",
@@ -334,10 +337,10 @@ export const negativeTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "haiyooo eyaa eka kaalaa",
     expectedOutput: "හයියෝ එයා ඒක කාලා",
-    accuracyJustification:
-      '• "haiyooo" is an exclamatory slang interjection (similar to "oh no!"/"wow!") that may not be in formal dictionaries.',
-    whatIsCovered:
-      "• Slang / informal language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "හඨ්යැඤආ එය එක ඕාලා",
+    status: "Fail",
+    accuracyJustification: "\"haiyooo\" is an exclamatory slang interjection (similar to \"oh no!/\"wow!\") that may not be in formal dictionaries.",
+    whatIsCovered: "• Slang / informal language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0005",
@@ -345,21 +348,21 @@ export const negativeTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "blorch g@rble 123% mama",
     expectedOutput: "බ්ලෝර්ච් ග@ර්බ්ල් 123% මම",
-    accuracyJustification:
-      '• "blorch g@rble 123% mama" begins with nonsense English-like words',
-    whatIsCovered:
-      "• Typographical error handling / Mixed language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "බ්වේර්ට් g@ර්බ්ලෙ 123% මම",
+    status: "Fail",
+    accuracyJustification: "\"blorch g@rble 123% mama\" begins with nonsense English-like words",
+    whatIsCovered: "• Typographical error handling / Mixed language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0006",
-    testCaseName: "Yansaya (Combined Letters)",
+    testCaseName: "\"Yansaya\" (Combined Letters)",
     inputLengthType: "S",
     input: "vidya",
-    expectedOutput: "විද්යා",
-    accuracyJustification:
-      '• "dya" resulted in separate characters (ඩ් + යා) instead of the combined form ද්යා.',
-    whatIsCovered:
-      "• Typographical error handling / Mixed language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
+    expectedOutput: "විග්‍යා",
+    actualOutput: "විඩ්යා",
+    status: "Fail",
+    accuracyJustification: "\"dya\" resulted in separate characters (ඩ් + යා) instead of the combined form ග්‍යා.",
+    whatIsCovered: "• Typographical error handling / Mixed language\n• simple sentence\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0007",
@@ -367,10 +370,10 @@ export const negativeTestCases: TestCase[] = [
     inputLengthType: "S",
     input: "koomada? yko. giiye?",
     expectedOutput: "කූමද? yko. ගියේ?",
-    accuracyJustification:
-      "• These abbreviations are non-standard, overly shortened even for informal Singlish.",
-    whatIsCovered:
-      "• Slang / informal language / Typographical error handling\n• Interrogative (question)\n• S (≤30 characters)\n• Robustness validation",
+    actualOutput: "කොමඩ? ය්කෙ. ගීයෙ?",
+    status: "Fail",
+    accuracyJustification: "These abbreviations are non-standard, overly shortened even for informal Singlish.",
+    whatIsCovered: "• Slang / informal language / Typographical error handling\n• Interrogative (question)\n• S (≤30 characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0008",
@@ -387,26 +390,23 @@ export const negativeTestCases: TestCase[] = [
     tcId: "Neg_Fun_0009",
     testCaseName: "Formal Letter Block",
     inputLengthType: "L",
-    input:
-      "Garu mahathmaya,Mata labana sathiye niwaduwak ganna puluwanda? Gedara podi hadissiyak wela thiyenawa. E nisa mata dawas 3k niwadu oni.Sthuthi,Saman.",
-    expectedOutput:
-      "ගරු මහත්මයා,මට ලබන සතියේ නිවාඩුවක් ගන්න පුළුවන්ද? ගෙදර පොඩි හදිස්සියක් වෙලා තියෙනවා. ඒ නිසා මට දවස් 3ක් නිවාඩු ඕනි.ස්තූතියි,සමන්.",
-    accuracyJustification:
-      "• The system fails to accurately convert misspelled and noisy Singlish words.",
-    whatIsCovered:
-      "• Typographical error handling\n• Complex / formal sentence\n• L (>300 Characters)\n• Robustness validation",
+    input: "Garu mahathmaya,Mata labana sathiye niwaduwak ganna puluwanda? Gedara podi hadissiyak wela thiyenawa. E nisa mata dawas 3k niwadu oni.Sthuthi,Saman.",
+    expectedOutput: "ගරු මහත්මය,මට ලබන සතියෙ නිවාඩුවක් ගන්න පුලුවන්ද? ගෙදර පෝඩි හදිස්ස්ියක් වෙල තියේනව. ඒ නිස මට දවස් 3ක් නිවාඩු ඔනි.ස්තුටි,සමන්.",
+    actualOutput: "ෟරු මහත්මය,මට ලබන සතියෙ නිwඅඩුwඅක් ගන්න පුලුwඅන්ඩ? ෟෙදර පෝඩි හඩිස්ස්ියක් wඑල තියේනwඅ. එ නිස මට ඩwඅස් 3ක් නිwඅඩු ඔනි.ස්තුටි,සමන්.",
+    status: "Fail",
+    accuracyJustification: "The system fails to accurately convert misspelled and noisy Singlish words.",
+    whatIsCovered: "• Typographical error handling\n• Complex / formal sentence\n• L (>300 Characters)\n• Robustness validation",
   },
   {
     tcId: "Neg_Fun_0010",
     testCaseName: "Overly Long Word Concatenation with Numerals",
     inputLengthType: "M",
-    input:
-      "mamageedharagiyaa2023december25eethhethapassebalannaavashyayakkarala",
-    expectedOutput: "මමගීධරගියා2023දෙසැම්බර්25ඊතේහතපස්බලන්නඅවශ්යයක්කරල",
-    accuracyJustification:
-      '• "mamageedharagiyaa2023december25eethhethapassebalannaavashyayakkarala" is an artificially long single "word"',
-    whatIsCovered:
-      "• Simple sentence (though unrecognizable)\n• M (31–299 characters)\n• Robustness validation",
+    input: "mamageedharagiyaa2021december13eethhethapassebalannaavashyayakkarala",
+    expectedOutput: "මමගීදරගියා2021දෙසීම්බර්13එතෙහටපස්බලන්නඅවශ්දග්කරල",
+    actualOutput: "මමගෙදරගියා2021december13ඒඑ්හෙදපස්සෙබලන්නාවශ්දග්කරල",
+    status: "Fail",
+    accuracyJustification: "\"mamageedharagiyaa2023december25eethhethapassebalannaavashyayakkarala\" is an artificially long single \"word\" with: No spaces between words, Embedded date \"2023december25\", Multiple thoughts concatenated.",
+    whatIsCovered: "• Simple sentence (though unrecognizable)\n• M (31–299 characters)\n• Robustness validation",
   },
 ];
 
